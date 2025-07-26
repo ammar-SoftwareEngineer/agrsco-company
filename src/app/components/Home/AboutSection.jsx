@@ -16,7 +16,7 @@ export default function AboutSection() {
           </div>
           <div className="md:col-span-6 col-span-12 ">
  
-            <p className="text-gray-700 mb-6 w-10/12 leading-12 text-xl">
+            <p className="text-gray-700 mb-6 md:w-10/12 w-full md:leading-12 md:text-xl leading-10 text-lg">
             أول منصة عربية تجمع المجال الزراعي في الوطن العربي في مكان واحد .
             من شركات زراعية موثوقة في جميع التخصصات ، وأستشاريين ومهندسين زراعيين ودكاترة بيطريين ، لتسهل عليك بدء مشروعك وتوفير إحتيجاتك وإطلاعك علي شركات جديدة ومتنوعة .
             </p>

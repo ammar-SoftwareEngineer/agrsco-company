@@ -568,6 +568,11 @@
       margin-inline: auto;
     }
   }
+  .md\:w-10\/12 {
+    @media (width >= 48rem) {
+      width: calc(10/12 * 100%);
+    }
+  }
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
@@ -603,6 +608,18 @@
     @media (width >= 48rem) {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .md\:leading-12 {
+    @media (width >= 48rem) {
+      --tw-leading: calc(var(--spacing) * 12);
+      line-height: calc(var(--spacing) * 12);
     }
   }
   .xl\:flex {
