@@ -1,7 +1,7 @@
 // Hero section with background video and overlay using Tailwind CSS
 import React from 'react';
 import Image from 'next/image';
-import heroImg from '@/images/slider1.webp';
+import heroImg from '@/images/slider2.jpeg';
 export default function Hero() {
   return (
     <section className="pt-6" >
