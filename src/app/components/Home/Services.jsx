@@ -77,7 +77,7 @@ export default function Services() {
   
           <div className="grid grid-cols-12 gap-20" data-aos="fade-up">
             {servicesList.map((service) => (
-              <div key={service.id} className="col-span-4">
+              <div key={service.id} className="md:col-span-4 col-12">
                 <div className="bg-white p-10 rounded-2xl shadow-sm hover:shadow-lg transition relative">
                   <div className="text-green-600 text-4xl absolute top-0 left-1/2 -translate-1/2 bg-white p-6 rounded-full shadow-sm">
                     {service.icon}
