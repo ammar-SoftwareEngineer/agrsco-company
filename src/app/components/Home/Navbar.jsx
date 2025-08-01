@@ -4,22 +4,24 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/images/logo.jpeg";
 import { useState, useEffect } from "react";
-
+import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+  console.log(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 90);
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={` px-4 md:px-5 ${
-        isScrolled ? "fixed w-full top-0 z-50" : ""
+      className={` px-4 md:px-5 transition-all duration-500 ease-in-out ${
+        isScrolled ? "fixed w-full top-0 z-50 " : ""
       }`}
     >
       <div className="bg-white rounded-b-2xl p-3 md:p-4 shadow-sm ">
@@ -56,10 +58,10 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-
+        <hr className="my-4 text-green-200 hidden md:block" />
         {/* Main Navigation */}
         <nav className=" ">
-          <div className="container rounded-2xl bg-white mx-auto flex justify-between items-center px-4">
+          <div className="container rounded-2xl bg-white mx-auto flex justify-between items-center">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
@@ -75,7 +77,7 @@ export default function Navbar() {
 
             {/* Desktop Menu - Centered */}
             <div className="hidden 2xl:flex flex-1">
-              <ul className="flex items-center py-4 gap-1 w-fit mx-auto rounded-2xl shadow-sm">
+              <ul className="flex items-center  gap-1 w-fit mx-auto rounded-2xl shadow">
                 <li className="nav-item">
                   <Link
                     href="/"

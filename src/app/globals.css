@@ -3,8 +3,8 @@
 :root {
   --white: #ffffff;
   --black: #171717;
-  --main-color: #57B609;
-  --second-color: #28D799;
+  --main-color:  #28D799;
+  --second-color: hsl(93, 91%, 37%);
 }
 
 body,html{    
@@ -18,9 +18,11 @@ body,html{
 ##################################################
 */
 .shadow-sm{
-  box-shadow: 0 0 10px 0 hsla(159, 69%, 50%, 0.293);
+  box-shadow: 0 0 10px 0 hsla(159, 69%, 50%, 0.5);
 }
-
+.bg-main{
+background-color: var(--main-color);
+}
 /*  
 ##################################################
 #                  LOADING                       #
@@ -90,12 +92,12 @@ body,html{
 }
 
 .nav-link:hover {
-  background-color: var(--second-color);
+  background-color: var(--main-color);
   color: white !important;
 }
 
 .nav-link.active {
-  background-color: var(--second-color);
+  background-color: var(--main-color);
   color: white !important;
 }
 

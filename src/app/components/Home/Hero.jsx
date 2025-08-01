@@ -1,54 +1,57 @@
 "use client";
-import React, { useEffect } from 'react';
-import Image from 'next/image';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import slider1 from "@/images/slider1.webp";
 import slider2 from "@/images/slider2.jpeg";
 import slider3 from "@/images/slider3.jpeg";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "@/app/media.css";
 export default function Hero() {
-
-
   // Hero slides data
   const heroSlides = [
     {
       id: 1,
       image: slider1,
-      title: 'أهلاً بيك في أجريسكو',
-      description: 'منصتك الزراعية الأولى اللي بتجمع كل عناصر المجال الزراعي في مكان واحد!'
+      title: "أهلاً بيك في أجريسكو",
+      description:
+        "منصتك الزراعية الأولى اللي بتجمع كل عناصر المجال الزراعي في مكان واحد!",
     },
     {
       id: 2,
       image: slider2,
-      title: 'خدمات زراعية متكاملة',
-      description: 'نوفر لك كل ما تحتاجه في مجال الزراعة'
+      title: "خدمات زراعية متكاملة",
+      description: "نوفر لك كل ما تحتاجه في مجال الزراعة",
     },
     {
       id: 3,
       image: slider3,
-      title: 'شركاء موثوقون',
-      description: 'تعاون مع أفضل الشركات في المجال الزراعي'
-    }
+      title: "شركاء موثوقون",
+      description: "تعاون مع أفضل الشركات في المجال الزراعي",
+    },
   ];
 
   return (
     <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000">
-      <div className='container mx-auto md:px-0 px-4 relative overflow-hidden md:h-[calc(100vh-210px)] h-full'>
-        <div className="relative w-full h-full md:rounded-4xl overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
+      <div className="container mx-auto md:px-0 relative overflow-hidden md:h-[calc(100vh-210px)] h-screen">
+        <div
+          className="relative w-full h-full md:rounded-4xl overflow-hidden"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
             effect="fade"
             fadeEffect={{
-              crossFade: true
+              crossFade: true,
             }}
             loop={true}
             autoplay={{
@@ -56,11 +59,11 @@ export default function Hero() {
               disableOnInteraction: false,
             }}
             navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
             }}
             pagination={{
-              el: '.swiper-pagination-bullet',
+              el: ".swiper-pagination-bullet",
               clickable: true,
             }}
             className="w-full h-full"
@@ -69,10 +72,10 @@ export default function Hero() {
               <SwiperSlide key={slide.id}>
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 bg-black/40 z-10 md:rounded-4xl"></div>
-                  <Image 
-                    src={slide.image} 
+                  <Image
+                    src={slide.image}
                     alt={slide.title}
-                    fill
+                  
                     className="w-full h-full md:object-cover object-contain object-center"
                     priority
                   />
@@ -80,7 +83,7 @@ export default function Hero() {
                   <div className="absolute inset-0 z-20 flex flex-col items-center justify-center py-16">
                     <div className="container mx-auto px-4">
                       <div className="text-center text-white text-3xl md:text-4xl">
-                        <h2 
+                        <h2
                           className="font-bold mb-6 drop-shadow-lg"
                           data-aos="fade-down"
                           data-aos-delay={`${(index + 1) * 200}`}
@@ -88,8 +91,8 @@ export default function Hero() {
                         >
                           {slide.title}
                         </h2>
-                        <p 
-                          className='md:leading-14 leading-10 text-lg md:text-3xl'
+                        <p
+                          className="md:leading-14 leading-10 text-lg md:text-3xl"
                           data-aos="fade-up"
                           data-aos-delay={`${(index + 1) * 400}`}
                           data-aos-duration="800"
@@ -102,31 +105,26 @@ export default function Hero() {
                 </div>
               </SwiperSlide>
             ))}
-            
+
             {/* Navigation Buttons */}
-            <div 
-              className="swiper-button-prev text-white"
+            <div
+              className="swiper-button-prev text-white !hidden md:!flex"
               data-aos="fade-right"
               data-aos-delay="600"
               data-aos-duration="800"
             ></div>
-            <div 
-              className="swiper-button-next text-white"
+            <div
+              className="swiper-button-next text-white !hidden md:!flex"
               data-aos="fade-left"
               data-aos-delay="600"
               data-aos-duration="800"
             ></div>
-            
+
             {/* Pagination */}
-            <div 
-              className="swiper-pagination-bullet"
-              data-aos="fade-up"
-              data-aos-delay="600"
-              data-aos-duration="800"
-            ></div>
+            <div className="swiper-pagination-bullet "></div>
           </Swiper>
         </div>
       </div>
     </section>
   );
-} 
+}

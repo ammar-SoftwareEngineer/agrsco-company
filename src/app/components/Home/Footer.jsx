@@ -5,8 +5,11 @@ import logo from '@/images/logo.png';
 
 export default function Footer() {
   return (
-    <footer className=" text-white md:pb-2">
-      <div className="container mx-auto  md:rounded-4xl bg-green-900 px-4 py-10">
+    <footer className=" px-4  ">
+      <div className=' bg-green-600 rounded-t-2xl text-white md:pb-2 px-4'>
+
+
+      <div className="container mx-auto   py-10">
         <div className="grid grid-cols-12 md:gap-10 gap-4 pb-8 border-b border-green-800">
           {/* Logo & About */}
           <div className="col-span-12 md:col-span-4">
@@ -35,7 +38,7 @@ export default function Footer() {
               <span><i className="fa-solid fa-phone ml-1" /> 0500000000</span>
               <span><i className="fa-solid fa-envelope ml-1" /> info@agrsco.com</span>
             </div>
-            <div className="col-span-12 md:col-span-4">
+            <div className="col-span-12 md:col-span-4 flex gap-3 mt-3">
               <a href="#" className="hover:text-green-300 text-xl"><i className="fab fa-facebook-f" /></a>
               <a href="#" className="hover:text-green-300 text-xl"><i className="fab fa-instagram" /></a>
               <a href="#" className="hover:text-green-300 text-xl"><i className="fab fa-linkedin-in" /></a>
@@ -46,6 +49,7 @@ export default function Footer() {
         <div className="text-center text-gray-300 pt-6 text-sm">
           جميع الحقوق محفوظة &copy; {new Date().getFullYear()} استشارات زراعية
         </div>
+      </div>
       </div>
     </footer>
   );
