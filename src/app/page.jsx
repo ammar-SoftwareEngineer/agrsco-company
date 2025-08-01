@@ -1,8 +1,19 @@
-import Image from "next/image";
-import logo from "@/images/logo.jpeg";
-import Navbar from "./components/Home/Navbar";
+"use client"
+
 import HomePage from "./pages/Home/page";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  }, []);
   return (
     <HomePage />
   );

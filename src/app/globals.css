@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --white: #ffffff;
+  --black: #171717;
   --main-color: #57B609;
   --second-color: #28D799;
 }
@@ -11,6 +11,7 @@ body,html{
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
 /*  
 ##################################################
 #                  LOADING                       #
@@ -22,7 +23,7 @@ body,html{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--background);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -67,5 +68,124 @@ body,html{
     opacity: 1;
   }
 }
+
+/*  
+##################################################
+#                  NAVBAR STYLES                 #
+##################################################
+*/
+
+.nav-link {
+  transition: all 0.3s ease;
+  border-radius: 0.75rem;
+}
+
+.nav-link:hover {
+  background-color: var(--second-color);
+  color: white !important;
+}
+
+.nav-link.active {
+  background-color: var(--second-color);
+  color: white !important;
+}
+
+.btn-lang {
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+  background-color: #4a9c08;
+  transform: translateY(-2px);
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+
+
+/*  
+##################################################
+#                  SWIPER STYLES                 #
+##################################################
+*/
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Custom Swiper Navigation */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--main-color) !important;
+  background: var(--white);
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 100%;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--white) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 25px !important;
+  font-weight: bold;
+}
+
+/* Custom Swiper Pagination */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--main-color);
+}
+
+
 
 
