@@ -42,7 +42,7 @@ export default function Hero() {
 
   return (
     <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000">
-      <div className='container mx-auto md:px-0 px-4 relative overflow-hidden md:h-[calc(100vh-240px)] h-full'>
+      <div className='container mx-auto md:px-0 px-4 relative overflow-hidden md:h-[calc(100vh-210px)] h-full'>
         <div className="relative w-full h-full md:rounded-4xl overflow-hidden" data-aos="zoom-in" data-aos-delay="300">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}

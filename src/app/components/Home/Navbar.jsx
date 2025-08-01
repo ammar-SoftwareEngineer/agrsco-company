@@ -18,40 +18,40 @@ export default function Navbar() {
 
   return (
     <header
-      className={`py-4 px-4 md:px-5 ${
+      className={` px-4 md:px-5 ${
         isScrolled ? "fixed w-full top-0 z-50" : ""
       }`}
     >
-      <div className="bg-green-600 container mx-auto rounded-2xl p-3 md:p-4  ">
+      <div className="bg-white rounded-b-2xl p-3 md:p-4 shadow-sm ">
         {/* Contact Info - Desktop Only */}
-        <div className="container  mx-auto hidden 2xl:flex justify-between items-center w-full mb-3">
+        <div className="container  mx-auto hidden 2xl:flex justify-between items-center w-full mb-6">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3 border-l-2 border-white pl-3">
-              <i className="fas fa-phone text-lg text-white"></i>
+              <i className="fas fa-phone text-lg text-green-600"></i>
               <div>
-                <a href="tel:01123456789" className="text-white">
+                <a href="tel:01123456789" className="text-green-600">
                   {" "}
                   01123456789
                 </a>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <i className="fa-solid fa-envelope text-lg text-white"></i>
+              <i className="fa-solid fa-envelope text-lg text-green-600"></i>
               <div>
-                <a href="mailto:info@agrsco.com" className="text-white">
+                <a href="mailto:info@agrsco.com" className="text-green-600">
                   info@agrsco.com
                 </a>
               </div>
             </div>
           </div>
           <div className="flex gap-3 items-center">
-            <a href="#" className="text-white">
+            <a href="#" className="text-green-600">
               <i className="fab fa-facebook-f text-xl"></i>
             </a>
-            <a href="#" className="text-white">
+            <a href="#" className="text-green-600">
               <i className="fab fa-instagram text-xl"></i>
             </a>
-            <a href="#" className="text-white">
+            <a href="#" className="text-green-600">
               <i className="fab fa-whatsapp text-xl"></i>
             </a>
           </div>
