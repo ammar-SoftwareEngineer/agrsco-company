@@ -47,8 +47,8 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-4 w-full">
+    <section className="py-12 ">
+      <div className="container mx-auto px-4 w-full py-12">
         <div className="text-center mb-10" data-aos="fade-down">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-800">
             من نحن
@@ -59,7 +59,7 @@ export default function AboutSection() {
             <Image
               src={aboutImg}
               alt="عن الشركة"
-              className="rounded-3xl w-full h-[700px] shadow-lg object-cover"
+              className="rounded-2xl w-full h-[700px] shadow-lg object-cover"
             />
           </div>
           <div className="md:col-span-6 col-span-12 flex gap-4 flex-col" data-aos="fade-left">
@@ -84,7 +84,7 @@ export default function AboutSection() {
                 })}
               </ul>
             </div>
-            <div className="flex flex-wrap gap-8 mt-10" data-aos="zoom-in">
+            <div className="flex md:justify-start justify-center flex-wrap gap-8 mt-10" data-aos="zoom-in">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">+10</div>
                 <div className="text-gray-500">سنوات خبرة</div>

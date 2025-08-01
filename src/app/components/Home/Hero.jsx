@@ -43,7 +43,7 @@ export default function Hero() {
     <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000">
       <div className="container mx-auto md:px-0 relative overflow-hidden md:h-[calc(100vh-210px)] h-screen">
         <div
-          className="relative w-full h-full md:rounded-4xl overflow-hidden"
+          className="relative w-full h-full md:rounded-2xl overflow-hidden"
 
         >
           <Swiper
@@ -70,7 +70,7 @@ export default function Hero() {
             {heroSlides.map((slide, index) => (
               <SwiperSlide key={slide.id}>
                 <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-black/40 z-10 md:rounded-4xl"></div>
+                  <div className="absolute inset-0 bg-black/40 z-10 md:rounded-2xl"></div>
                   <Image
                     src={slide.image}
                     alt={slide.title}
@@ -81,7 +81,7 @@ export default function Hero() {
                   {/* Content */}
                   <div className="absolute inset-0 z-20 flex flex-col items-center justify-center py-16">
                     <div className="container mx-auto px-4">
-                      <div className="text-center text-white text-3xl md:text-4xl">
+                      <div className="text-center text-white text-3xl md:text-2xl">
                         <h2
                           className="font-bold mb-6 drop-shadow-lg"
                           data-aos="fade-down"
