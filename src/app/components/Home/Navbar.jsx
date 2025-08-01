@@ -13,20 +13,24 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 90);
+      setIsScrolled(window.scrollY > 70);
     };
     window.addEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={` px-4 md:px-5 transition-all duration-500 ease-in-out ${
+      className={` px-4 md:px-6 transition-all duration-500 ease-in-out ${
         isScrolled ? "fixed w-full top-0 z-50 " : ""
       }`}
     >
       <div className="bg-white rounded-b-2xl p-3 md:p-4 shadow-sm ">
         {/* Contact Info - Desktop Only */}
-        <div className="container  mx-auto hidden 2xl:flex justify-between items-center w-full mb-6">
+        <div
+          className={`container  mx-auto hidden 2xl:flex justify-between items-center w-full mb-6 ${
+            isScrolled ? "!hidden" : "!flex"
+          }`}
+        >
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3 border-l-2 border-white pl-3">
               <i className="fas fa-phone text-lg text-green-600"></i>
@@ -58,7 +62,11 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-        <hr className="my-4 text-green-200 hidden md:block" />
+        <hr
+          className={`my-4 text-green-200 hidden md:block ${
+            isScrolled ? "!hidden" : "!block"
+          }`}
+        />
         {/* Main Navigation */}
         <nav className=" ">
           <div className="container rounded-2xl bg-white mx-auto flex justify-between items-center">

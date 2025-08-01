@@ -44,8 +44,7 @@ export default function Hero() {
       <div className="container mx-auto md:px-0 relative overflow-hidden md:h-[calc(100vh-210px)] h-screen">
         <div
           className="relative w-full h-full md:rounded-4xl overflow-hidden"
-          data-aos="zoom-in"
-          data-aos-delay="300"
+
         >
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
