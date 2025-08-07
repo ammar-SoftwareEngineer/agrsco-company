@@ -84,7 +84,7 @@ export default function AboutSection() {
                 })}
               </ul>
             </div>
-            <div className="flex md:justify-start justify-center flex-wrap gap-8 mt-10" data-aos="zoom-in">
+            <div className="flex justify-start  flex-wrap gap-8 mt-10" data-aos="zoom-in">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">+10</div>
                 <div className="text-gray-500">سنوات خبرة</div>

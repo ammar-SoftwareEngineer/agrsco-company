@@ -16,7 +16,7 @@ export default function Footer() {
             <Link href="/" className=" block  col-span-12 md:col-span-6">
               <Image src={logo} alt="شعار الموقع" width={180} height={180} className="rounded-xl md:mx-0 mx-auto" />
             </Link>
-            <p className="text-gray-200 text-center md:text-right col-span-12 md:col-span-6">
+            <p className="text-gray-100 text-center md:text-right col-span-12 md:col-span-6">
               نحن شركة متخصصة في الاستشارات الزراعية وبيع الكتب ودراسات الجدوى، نهدف لدعم عملائنا بأفضل الحلول والخبرات.
      
             </p>

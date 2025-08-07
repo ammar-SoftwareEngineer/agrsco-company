@@ -26,7 +26,7 @@ export default function Navbar() {
       <div className="bg-white rounded-b-2xl p-3 md:p-4 shadow-sm ">
         {/* Contact Info - Desktop Only */}
         <div
-          className={`container  mx-auto hidden 2xl:flex justify-between items-center w-full mb-6 ${
+          className={`container  mx-auto !hidden 2xl:!flex justify-between items-center w-full mb-6 ${
             isScrolled ? "!hidden" : "!flex"
           }`}
         >
@@ -62,7 +62,7 @@ export default function Navbar() {
           </div>
         </div>
         <hr
-          className={`my-4 text-green-200 hidden md:block ${
+          className={`my-4 text-green-200 !hidden md:!block ${
             isScrolled ? "!hidden" : "!block"
           }`}
         />
