@@ -31,10 +31,10 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { id: "home", label: "الرئيسية", icon: "🏠" },
-    { id: "about", label: "من نحن", icon: "👥" },
-    { id: "services", label: "الخدمات", icon: "🚀" },
-    { id: "contact", label: "تواصل معنا", icon: "📞" },
+    { id: "home", label: "الرئيسية" },
+    { id: "about", label: "من نحن" },
+    { id: "services", label: "الخدمات" },
+    { id: "contact", label: "تواصل معنا" },
   ];
 
   return (

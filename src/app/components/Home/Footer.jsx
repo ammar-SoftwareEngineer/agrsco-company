@@ -6,19 +6,19 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "الرئيسية", href: "#home", icon: "🏠" },
-    { name: "من نحن", href: "#about", icon: "👥" },
-    { name: "الخدمات", href: "#services", icon: "🚀" },
-    { name: "تحميل التطبيق", href: "#download", icon: "📱" },
-    { name: "تواصل معنا", href: "#contact", icon: "📞" },
+    { name: "الرئيسية", href: "#home" },
+    { name: "من نحن", href: "#about" },
+    { name: "الخدمات", href: "#services" },
+    { name: "تحميل التطبيق", href: "#download" },
+    { name: "تواصل معنا", href: "#contact" },
   ];
 
   const services = [
-    { name: "الشركات الزراعية", icon: "🏢" },
-    { name: "الاستشاريون والبيطريون", icon: "👨‍🌾" },
-    { name: "الوظائف والتوظيف", icon: "💼" },
-    { name: "المشاتل", icon: "🌱" },
-    { name: "دراسات الجدوى", icon: "📊" },
+    { name: "الشركات الزراعية" },
+    { name: "الاستشاريون والبيطريون" },
+    { name: "الوظائف والتوظيف" },
+    { name: "المشاتل" },
+    { name: "دراسات الجدوى" },
   ];
 
   const socialLinks = [
