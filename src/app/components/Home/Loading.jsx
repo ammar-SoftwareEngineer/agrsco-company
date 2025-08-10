@@ -1,5 +1,5 @@
 import Image from "next/image";
-import banarLogo from "@/images/logo.png";
+import banarLogo from "@/app/images/logo.png";
 export default function Loading() {
     return (
         <div className="loading">

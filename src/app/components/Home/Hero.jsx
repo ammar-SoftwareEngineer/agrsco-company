@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import slider1 from "@/images/slider1.webp";
-import slider2 from "@/images/slider2.jpeg";
-import slider3 from "@/images/slider3.jpeg";
+import slider1 from "@/app/images/slider1.webp";
+import slider2 from "@/app/images/slider2.jpeg";
+import slider3 from "@/app/images/slider3.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -40,7 +40,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000">
+    <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000" id="home">
       <div className="container mx-auto md:px-0 relative overflow-hidden md:h-[calc(100vh-210px)] h-screen">
         <div
           className="relative w-full h-full md:rounded-2xl overflow-hidden"

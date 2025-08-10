@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import aboutImg from "@/images/about.jpg"; // يمكنك تغيير الصورة لاحقاً
+import aboutImg from "@/app/images/about.jpg"; // يمكنك تغيير الصورة لاحقاً
 
 export default function AboutSection() {
   const dataList = [
@@ -55,14 +55,14 @@ export default function AboutSection() {
           </h2>
         </div>
         <div className="grid grid-cols-12 md:gap-10 gap-6">
-          <div className="md:col-span-6 col-span-12" data-aos="fade-right">
+          <div className="lg:col-span-6 col-span-12" data-aos="fade-right">
             <Image
               src={aboutImg}
               alt="عن الشركة"
               className="rounded-2xl w-full h-[700px] shadow-lg object-cover"
             />
           </div>
-          <div className="md:col-span-6 col-span-12 flex gap-4 flex-col" data-aos="fade-left">
+          <div className="lg:col-span-6 col-span-12 flex gap-4 flex-col" data-aos="fade-left">
             <p className="text-gray-700 mb-6 md:w-10/12 w-full md:leading-12 md:text-lg leading-10 text-lg">
               أجريسكو هي منصة زراعية عربية شاملة، أُنشئت لخدمة القطاع الزراعي في
               الوطن العربي من خلال تجميع كل عناصره في مكان واحد. رؤيتنا هي خلق

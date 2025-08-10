@@ -2,7 +2,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/images/logo.jpeg";
+import logo from "@/app/images/logo.jpeg";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 export default function Navbar() {
@@ -84,72 +84,51 @@ export default function Navbar() {
 
             {/* Desktop Menu - Centered */}
             <div className="hidden 2xl:flex flex-1">
-              <ul className="flex items-center  gap-1 w-fit mx-auto rounded-2xl shadow">
+              <ul className="flex items-center gap-1 w-fit mx-auto rounded-2xl shadow">
                 <li className="nav-item">
-                  <Link
-                    href="/"
+                  <a
+                    href="#home"
                     className="nav-link active px-4 py-3 block text-gray-800 hover:text-green-600"
                   >
                     الرئيسية
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    href="/about"
+                  <a
+                    href="#about"
                     className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
                   >
                     من نحن
-                  </Link>
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    href="/divisions"
+                  <a
+                    href="#services"
                     className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
                   >
-                    الأقسام
-                  </Link>
+                    الخدمات
+                  </a>
                 </li>
                 <li className="nav-item">
-                  <Link
-                    href="/articles"
+                  <a
+                    href="#contact"
                     className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
                   >
-                    الأخبار والفعاليات
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    href="/partners"
-                    className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
-                  >
-                    الشركاء
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    href="/careers"
-                    className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
-                  >
-                    الوظائف
-                  </Link>
+                       تواصل معنا
+                  
+                  </a>
                 </li>
               </ul>
             </div>
 
             {/* Buttons - Right Side */}
             <div className="hidden 2xl:flex items-center gap-3 flex-shrink-0">
-              <Link
-                href="/contact"
-                className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+              <a
+                href="#download"
+                className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer" 
               >
-                تواصل معنا
-              </Link>
-              <Link
-                href="/en"
-                className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-              >
-                EN
-              </Link>
+               تحميل
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -183,70 +162,52 @@ export default function Navbar() {
               <div className="p-4">
                 <ul className="flex flex-col gap-2 rounded-2xl shadow-sm p-3">
                   <li>
-                    <Link
-                      href="/"
+                    <a
+                      href="#home"
                       className="nav-link active px-4 py-3 block text-gray-800 hover:text-green-600"
+                      onClick={() => setMenuOpen(false)}
                     >
                       الرئيسية
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      href="/about"
+                    <a
+                      href="#about"
                       className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
+                      onClick={() => setMenuOpen(false)}
                     >
                       من نحن
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      href="/divisions"
+                    <a
+                      href="#services"
                       className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      الأقسام
-                    </Link>
+                      الخدمات
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      href="/articles"
+                  <Link
+                   href="#contact"
                       className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      الأخبار والفعاليات
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/partners"
-                      className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
-                    >
-                      الشركاء
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/careers"
-                      className="nav-link px-4 py-3 block text-gray-800 hover:text-green-600"
-                    >
-                      الوظائف
+                         تواصل معنا
                     </Link>
                   </li>
                 </ul>
                 <ul className="flex flex-row gap-4 mt-5">
                   <li>
-                    <Link
-                      href="/contact"
-                      className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                    <a
+                     href="#download"
+                      className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 cursor-pointer"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      تواصل معنا
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/en"
-                      className="btn-lang px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
-                    >
-                      EN
-                    </Link>
+                         تحميل
+                
+                    </a>
                   </li>
                 </ul>
                 <ul className="list-none px-2 pt-5 rounded-4 mt-5">

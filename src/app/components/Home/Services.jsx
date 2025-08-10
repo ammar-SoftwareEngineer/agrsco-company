@@ -1,64 +1,80 @@
+"use client";
+import Image from "next/image";
+import { useState } from "react";
+import services1 from "@/app/images/services1.jpg";
+import services2 from "@/app/images/services2.jpg";
+import services3 from "@/app/images/services3.webp";
+import services4 from "@/app/images/services4.jpg";
+import services5 from "@/app/images/services5.jpeg";
+import services6 from "@/app/images/services6.jpg";
+import services7 from "@/app/images/services7.png";
+import services8 from "@/app/images/services8.png";
+import services9 from "@/app/images/services9.jpg";
+import services10 from "@/app/images/services10.jpg";
+
 export default function Services() {
+  const [showAll, setShowAll] = useState(false);
+  
   const servicesList = [
     {
       id: 1,
-      icon: <i className="fas fa-building"></i>,
+      image: services1,
       header: "الشركات الزراعية",
       description: "دليل شامل للشركات مصنفة حسب النشاط والموقع الجغرافي.",
     },
     {
       id: 2,
-      icon: <i className="fas fa-user-md"></i>,
+      image: services2,
       header: "الاستشاريون والبيطريون",
       description: "ملفات مهنية شاملة للمهندسين الزراعيين والدكاترة البيطريين.",
     },
     {
       id: 3,
-      icon: <i className="fas fa-briefcase"></i>,
+      image: services3,
       header: "الوظائف والتوظيف",
       description: "فرص عمل زراعية وبيطرية مع إمكانية التقديم مباشرة.",
     },
     {
       id: 4,
-      icon: <i className="fas fa-tree"></i>,
+      image: services4,
       header: "المشاتل",
       description:
         "قاعدة بيانات مشاتل متنوعة تشمل نباتات الزينة والفاكهة والطبية.",
     },
     {
       id: 5,
-      icon: <i className="fas fa-store"></i>,
+      image: services5,
       header: "التجار والمحلات",
       description: "عرض لتجار الخضروات والفواكه والماشية والأدوات الزراعية.",
     },
     {
       id: 6,
-      icon: <i className="fas fa-book-open"></i>,
+      image: services6,
       header: "المقالات التعليمية",
       description:
         "محتوى علمي لنشر المعرفة الزراعية والوقاية النباتية والابتكار.",
     },
     {
       id: 7,
-      icon: <i className="fas fa-chart-line"></i>,
+      image: services7,
       header: "دراسات الجدوى",
       description: "نماذج جاهزة مع إمكانية طلب دراسة جدوى مخصصة.",
     },
     {
       id: 8,
-      icon: <i className="fas fa-chalkboard-teacher"></i>,
+      image: services8,
       header: "الكورسات والتدريبات",
       description: "دورات تدريبية أونلاين وحضوري مع تفاصيل شاملة عن كل دورة.",
     },
     {
       id: 9,
-      icon: <i className="fas fa-bullhorn"></i>,
+      image: services9,
       header: "الإعلانات والاشتراكات",
       description: "باقات اشتراك وخطط دعائية متميزة لزيادة ظهورك على المنصة.",
     },
     {
       id: 10,
-      icon: <i className="fas fa-hands-helping"></i>,
+      image: services10,
       header: "التبرع والمساعدة",
       description:
         "دعم طلاب الزراعة والمزارعين المحتاجين، وزراعة الأشجار كصدقة جارية.",
@@ -68,6 +84,7 @@ export default function Services() {
   return (
     <section className="py-20 bg-gray-50" id="services">
       <div className="container mx-auto px-4 w-full">
+        {/* العنوان الرئيسي */}
         <div className="text-center mb-24" data-aos="fade-down">
           <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
             خدماتنا
@@ -78,27 +95,63 @@ export default function Services() {
           </p>
         </div>
 
+                {/* شبكة الكروت */}
         <div
-          className="grid grid-cols-12 md:gap-20 gap-x-10 gap-y-16 "
+          className="grid grid-cols-12 gap-10"
           data-aos="fade-up"
         >
-          {servicesList.map((service) => (
+          {servicesList.slice(0, showAll ? servicesList.length : 4).map((service) => (
             <div
               key={service.id}
-              className="sm:col-span-6 md:col-span-3  col-span-full"
+              className="xl:col-span-3 sm:col-span-6 col-span-12 group rounded-2xl   transition-all duration-500 ease-in-out relative  text-center hover:scale-105 cursor-pointer"
             >
-              <div className="bg-white p-10 rounded-2xl shadow-sm hover:shadow-lg transition relative h-50">
-                <div className="text-green-600 text-4xl absolute top-0 left-1/2 -translate-1/2 bg-white p-6 rounded-full shadow-sm  w-20 h-20 flex align-middle justify-center">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2 mt-6">
-                  {service.header}
+              {/* صورة الخدمة */}
+              <div className="relative overflow-hidden rounded-2xl w-full">
+                <Image
+                  src={service?.image}
+                  alt={service?.header}
+                  className="w-full h-80 object-cover rounded-2xl transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  priority
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black opacity-50 rounded-2xl transition-opacity duration-500 ease-in-out group-hover:opacity-70"></div>
+              </div>
+
+              <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-white transform transition-all duration-500 ease-in-out group-hover:scale-105">
+                <h3 className="text-xl font-semibold mb-3 transition-all duration-300 ease-in-out group-hover:text-2xl group-hover:mb-4">
+                  {service?.header}
                 </h3>
-                <p className="text-gray-600 text-base">{service.description}</p>
+                <p className="text-gray-200 text-base transition-all duration-300 ease-in-out group-hover:text-lg opacity-90 group-hover:opacity-100">
+                  {service?.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* زر عرض المزيد */}
+        {!showAll && servicesList.length > 4 && (
+          <div className="text-center mt-12" data-aos="fade-up">
+            <button
+              onClick={() => setShowAll(true)}
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
+            >
+              عرض جميع الخدمات
+            </button>
+          </div>
+        )}
+
+        {/* زر إخفاء */}
+        {showAll && (
+          <div className="text-center mt-12" data-aos="fade-up">
+            <button
+              onClick={() => setShowAll(false)}
+              className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
+            >
+              إخفاء الخدمات
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
