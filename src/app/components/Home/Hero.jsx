@@ -6,46 +6,49 @@ import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import slider1 from "@/app/images/slider1.webp";
 import slider2 from "@/app/images/slider2.jpeg";
 import slider3 from "@/app/images/slider3.jpeg";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-import "@/app/media.css";
+
 export default function Hero() {
   // Hero slides data
-  const heroSlides = [
+    const heroSlides = [
     {
       id: 1,
       image: slider1,
       title: "أهلاً بيك في أجريسكو",
-      description:
-        "منصتك الزراعية الأولى اللي بتجمع كل عناصر المجال الزراعي في مكان واحد!",
+      subtitle: "منصتك الزراعية الأولى",
+      description: "منصة شاملة تجمع كل عناصر المجال الزراعي في مكان واحد، تقدم خدمات تعليمية، استشارية، إعلانية، ووظيفية",
+      cta: "اكتشف خدماتنا",
     },
     {
       id: 2,
       image: slider2,
       title: "خدمات زراعية متكاملة",
-      description: "نوفر لك كل ما تحتاجه في مجال الزراعة",
+      subtitle: "حلول شاملة للمزارعين",
+      description: "نوفر لك كل ما تحتاجه في مجال الزراعة من استشارات وتدريب ومعدات وخدمات متخصصة",
+      cta: "احصل على الاستشارة",
     },
     {
       id: 3,
       image: slider3,
       title: "شركاء موثوقون",
-      description: "تعاون مع أفضل الشركات في المجال الزراعي",
+      subtitle: "تعاون مع الأفضل",
+      description: "تعاون مع أفضل الشركات والمؤسسات في المجال الزراعي لضمان نجاح مشروعك",
+      cta: "تواصل معنا",
     },
   ];
 
   return (
-    <section className="md:pt-6" data-aos="fade-up" data-aos-duration="1000" id="home">
-      <div className="container mx-auto md:px-0 relative overflow-hidden md:h-[calc(100vh-210px)] h-screen">
-        <div
-          className="relative w-full h-full md:rounded-2xl overflow-hidden"
-
-        >
+    <section className="relative w-full h-screen" id="home">
+      {/* خلفية متدرجة */}
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 to-green-600/20 z-0"></div>
+      
+      <div className="relative w-full h-full">
+        <div className="relative w-full h-full text-center">
           <Swiper
             modules={[Navigation, Pagination, Autoplay, EffectFade]}
             effect="fade"
@@ -54,7 +57,7 @@ export default function Hero() {
             }}
             loop={true}
             autoplay={{
-              delay: 5000,
+              delay: 6000,
               disableOnInteraction: false,
             }}
             navigation={{
@@ -62,42 +65,52 @@ export default function Hero() {
               prevEl: ".swiper-button-prev",
             }}
             pagination={{
-              el: ".swiper-pagination-bullet",
+              el: ".swiper-pagination",
               clickable: true,
+              renderBullet: function (index, className) {
+                return `<span class="${className} bg-white/50 hover:bg-white transition-all duration-300 w-3 h-3 mx-1"></span>`;
+              },
             }}
             className="w-full h-full"
           >
             {heroSlides.map((slide, index) => (
               <SwiperSlide key={slide.id}>
-                <div className="relative w-full h-full">
-                  <div className="absolute inset-0 bg-black/40 z-10 md:rounded-2xl"></div>
+                <div className="relative w-full h-full group">
+                  {/* صورة الخلفية */}
                   <Image
                     src={slide.image}
                     alt={slide.title}
-                  
-                    className="w-full h-full md:object-cover object-contain object-center"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     priority
                   />
-                  {/* Content */}
-                  <div className="absolute inset-0 z-20 flex flex-col items-center justify-center py-16">
-                    <div className="container mx-auto px-4">
-                      <div className="text-center text-white text-3xl md:text-2xl">
-                        <h2
-                          className="font-bold mb-6 drop-shadow-lg"
-                          data-aos="fade-down"
-                          data-aos-delay={`${(index + 1) * 200}`}
-                          data-aos-duration="800"
-                        >
-                          {slide.title}
-                        </h2>
-                        <p
-                          className="md:leading-14 leading-10 text-lg md:text-3xl"
-                          data-aos="fade-up"
-                          data-aos-delay={`${(index + 1) * 400}`}
-                          data-aos-duration="800"
-                        >
-                          {slide.description}
-                        </p>
+                  
+                  {/* Overlay متدرج */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/20"></div>
+                  
+                  {/* محتوى الشريحة */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="container mx-auto px-4 md:px-8">
+                      <div className="text-center text-white max-w-4xl mx-auto">
+                        
+                        {/* النص */}
+                        <div className="space-y-8" data-aos="fade-up" data-aos-delay={index * 200}>
+                          {/* العنوان */}
+                          <div className="space-y-6">
+                            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+                              {slide.title}
+                            </h1>
+                            <h2 className="text-2xl md:text-3xl text-green-400 font-semibold">
+                              {slide.subtitle}
+                            </h2>
+                          </div>
+                          
+                          {/* الوصف */}
+                          <p className="text-xl md:text-2xl leading-relaxed text-gray-200 max-w-3xl mx-auto">
+                            {slide.description}
+                          </p>
+                          
+                         
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -105,25 +118,17 @@ export default function Hero() {
               </SwiperSlide>
             ))}
 
-            {/* Navigation Buttons */}
-            <div
-              className="swiper-button-prev text-white !hidden md:!flex"
-              data-aos="fade-right"
-              data-aos-delay="600"
-              data-aos-duration="800"
-            ></div>
-            <div
-              className="swiper-button-next text-white !hidden md:!flex"
-              data-aos="fade-left"
-              data-aos-delay="600"
-              data-aos-duration="800"
-            ></div>
+            {/* أزرار التنقل */}
+            <div className="swiper-button-prev !text-white !bg-white/20 !backdrop-blur-sm !w-12 !h-12 !rounded-full hover:!bg-white/30 transition-all duration-300 !hidden md:!flex"></div>
+            <div className="swiper-button-next !text-white !bg-white/20 !backdrop-blur-sm !w-12 !h-12 !rounded-full hover:!bg-white/30 transition-all duration-300 !hidden md:!flex"></div>
 
-            {/* Pagination */}
-            <div className="swiper-pagination-bullet "></div>
+            {/* الترقيم */}
+            <div className="swiper-pagination !bottom-8"></div>
           </Swiper>
         </div>
       </div>
+      
+     
     </section>
   );
 }

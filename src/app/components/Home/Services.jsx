@@ -82,56 +82,87 @@ export default function Services() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50" id="services">
-      <div className="container mx-auto px-4 w-full">
+    <section className="py-20 bg-gradient-to-br from-green-50 to-white" id="services">
+      <div className="container mx-auto px-4">
+        
         {/* العنوان الرئيسي */}
-        <div className="text-center mb-24" data-aos="fade-down">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">
-            خدماتنا
+        <div className="text-center mb-16" data-aos="fade-down">
+          <span className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            🚀 خدماتنا
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            خدمات
+            <span className="text-green-600 block">شاملة</span>
+            ومتطورة
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             أجريسكو منصة شاملة تخدم جميع عناصر المجال الزراعي من خلال تقديم
             خدمات تعليمية، استشارية، إعلانية، ووظيفية عبر أقسام متكاملة.
           </p>
         </div>
 
-                {/* شبكة الكروت */}
-        <div
-          className="grid grid-cols-12 md:gap-10 gap-y-10"
-          data-aos="fade-up"
-        >
+        {/* شبكة الكروت */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" data-aos="fade-up">
           {servicesList.map((service) => (
             <div
               key={service.id}
-              className="xl:col-span-3 sm:col-span-6 col-span-12 group rounded-2xl   transition-all duration-500 ease-in-out relative  text-center hover:scale-105 cursor-pointer"
+              className="group rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out relative overflow-hidden cursor-pointer transform hover:-translate-y-2"
             >
               {/* صورة الخدمة */}
-              <div className="relative overflow-hidden rounded-2xl w-full">
+              <div className="relative h-72 overflow-hidden">
                 <Image
                   src={service?.image}
                   alt={service?.header}
-                  className="w-full h-80 object-cover rounded-2xl transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                   priority
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black opacity-50 rounded-2xl transition-opacity duration-500 ease-in-out group-hover:opacity-70"></div>
+                {/* Overlay محسن */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity duration-500 ease-in-out group-hover:opacity-90"></div>
+                
+                {/* تأثير إضافي */}
+                <div className="absolute inset-0 bg-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
-              <div className="absolute inset-0 flex flex-col justify-center items-center p-8 text-white transform transition-all duration-500 ease-in-out group-hover:scale-105">
-                <h3 className="text-xl font-semibold mb-3 transition-all duration-300 ease-in-out group-hover:text-2xl group-hover:mb-4">
-                  {service?.header}
-                </h3>
-                <p className="text-gray-200 text-base transition-all duration-300 ease-in-out group-hover:text-lg opacity-90 group-hover:opacity-100">
-                  {service?.description}
-                </p>
+              {/* المحتوى */}
+              <div className="absolute inset-0 flex flex-col justify-end items-center p-6 text-white">
+                <div className="text-center transform transition-all duration-500 ease-in-out group-hover:scale-105">
+                  <h3 className="text-xl font-bold mb-3 transition-all duration-300 ease-in-out group-hover:text-2xl group-hover:mb-4">
+                    {service?.header}
+                  </h3>
+                  <p className="text-gray-200 text-sm transition-all duration-300 ease-in-out group-hover:text-base opacity-90 group-hover:opacity-100 leading-relaxed">
+                    {service?.description}
+                  </p>
+                </div>
               </div>
+
+              {/* تأثير إضافي في الزوايا */}
+              <div className="absolute top-0 left-0 w-0 h-0 border-t-2 border-l-2 border-green-400 opacity-0 group-hover:opacity-100 group-hover:w-8 group-hover:h-8 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-0 h-0 border-t-2 border-r-2 border-green-400 opacity-0 group-hover:opacity-100 group-hover:w-8 group-hover:h-8 transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-0 h-0 border-b-2 border-l-2 border-green-400 opacity-0 group-hover:opacity-100 group-hover:w-8 group-hover:h-8 transition-all duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-0 h-0 border-b-2 border-r-2 border-green-400 opacity-0 group-hover:opacity-100 group-hover:w-8 group-hover:h-8 transition-all duration-500"></div>
             </div>
           ))}
         </div>
 
-    
-       
-        
+        {/* إحصائيات سريعة */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8" data-aos="fade-up">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+            <div className="text-gray-600">خدمة متاحة</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">1000+</div>
+            <div className="text-gray-600">مستخدم نشط</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">24/7</div>
+            <div className="text-gray-600">دعم متواصل</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-green-600 mb-2">98%</div>
+            <div className="text-gray-600">رضا العملاء</div>
+          </div>
+        </div>
       </div>
     </section>
   );
