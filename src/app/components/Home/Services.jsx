@@ -97,10 +97,10 @@ export default function Services() {
 
                 {/* شبكة الكروت */}
         <div
-          className="grid grid-cols-12 gap-10"
+          className="grid grid-cols-12 md:gap-10 gap-y-10"
           data-aos="fade-up"
         >
-          {servicesList.slice(0, showAll ? servicesList.length : 4).map((service) => (
+          {servicesList.map((service) => (
             <div
               key={service.id}
               className="xl:col-span-3 sm:col-span-6 col-span-12 group rounded-2xl   transition-all duration-500 ease-in-out relative  text-center hover:scale-105 cursor-pointer"
@@ -129,29 +129,9 @@ export default function Services() {
           ))}
         </div>
 
-        {/* زر عرض المزيد */}
-        {!showAll && servicesList.length > 4 && (
-          <div className="text-center mt-12" data-aos="fade-up">
-            <button
-              onClick={() => setShowAll(true)}
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
-            >
-              عرض جميع الخدمات
-            </button>
-          </div>
-        )}
-
-        {/* زر إخفاء */}
-        {showAll && (
-          <div className="text-center mt-12" data-aos="fade-up">
-            <button
-              onClick={() => setShowAll(false)}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg cursor-pointer"
-            >
-              إخفاء الخدمات
-            </button>
-          </div>
-        )}
+    
+       
+        
       </div>
     </section>
   );

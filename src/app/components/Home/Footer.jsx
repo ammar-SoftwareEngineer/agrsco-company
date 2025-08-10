@@ -5,7 +5,7 @@ import logo from '@/app/images/logo.png';
 
 export default function Footer() {
   return (
-    <footer className=" px-6  ">
+    <footer className=" md:px-6  ">
       <div className=' bg-green-600 rounded-t-2xl text-white md:pb-2 px-4'>
 
 

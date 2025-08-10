@@ -59,7 +59,7 @@ export default function AboutSection() {
             <Image
               src={aboutImg}
               alt="عن الشركة"
-              className="rounded-2xl w-full h-[700px] shadow-lg object-cover"
+              className="rounded-2xl w-full md:h-[700px] h-96 shadow-lg object-cover"
             />
           </div>
           <div className="lg:col-span-6 col-span-12 flex gap-4 flex-col" data-aos="fade-left">

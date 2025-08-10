@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={` px-4 md:px-6 transition-all duration-500 ease-in-out ${
+      className={` md:px-6 transition-all duration-500 ease-in-out ${
         isScrolled ? "fixed w-full top-0 z-50 " : ""
       }`}
     >
