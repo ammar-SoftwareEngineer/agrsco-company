@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import services1 from "@/app/images/services1.jpg";
+import services1 from "@/app/images/services1.jpeg";
 import services2 from "@/app/images/services2.jpg";
 import services3 from "@/app/images/services3.webp";
 import services4 from "@/app/images/services4.jpg";

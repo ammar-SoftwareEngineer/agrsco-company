@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-import slider1 from "@/app/images/slider1.webp";
+import slider1 from "@/app/images/slider1.jpeg";
 import slider2 from "@/app/images/slider2.jpeg";
 import slider3 from "@/app/images/slider3.jpeg";
 
