@@ -1,60 +1,9 @@
 "use client"
 import Image from "next/image";
-import aboutImg from "@/app/images/about.jpg";
+import aboutImg from "@/app/images/about.jpeg";
 
 export default function AboutSection() {
-  const dataList = [
-    {
-      id: 1,
-      icon: "🏢",
-      text: "الشركات الزراعية المتخصصة في جميع المجالات",
-    },
-    {
-      id: 2,
-      icon: "👨‍🌾",
-      text: "المهندسين الزراعيين والاستشاريين والدكاترة البيطريين",
-    },
-    {
-      id: 3,
-      icon: "🌱",
-      text: "المشاتل بأنواعها وتخصصاتها المختلفة",
-    },
-    {
-      id: 4,
-      icon: "🛒",
-      text: "التجار والمحلات في كل ما يخص الزراعة والإنتاج الحيواني",
-    },
-    {
-      id: 5,
-      icon: "💼",
-      text: "فرص العمل والتوظيف داخل المجال الزراعي",
-    },
-    {
-      id: 6,
-      icon: "📊",
-      text: "دراسات الجدوى للمشاريع الزراعية والحيوانية",
-    },
-    {
-      id: 7,
-      icon: "🎓",
-      text: "الكورسات والتدريبات المهنية المتخصصة",
-    },
-    {
-      id: 8,
-      icon: "📝",
-      text: "المقالات المتنوعة لنشر المعرفة والتجارب الزراعية",
-    },
-    {
-      id: 9,
-      icon: "📢",
-      text: "خدمات الإعلانات والاشتراكات للمؤسسات والأفراد",
-    },
-    {
-      id: 10,
-      icon: "🤝",
-      text: "مساحة للتبرع والمساعدة لدعم المبادرات الزراعية",
-    },
-  ];
+
 
   const stats = [
     { number: "10+", label: "سنوات خبرة", icon: "⏰" },
@@ -114,28 +63,8 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* الخدمات */}
-            <div>
-              <h3 className="text-xl font-bold text-gray-800 mb-6">
-                خدماتنا الشاملة
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {dataList.slice(0, 8).map((item) => (
-                  <div 
-                    key={item.id} 
-                    className="flex items-center gap-3 p-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 group"
-                  >
-                    <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
-                      {item.icon}
-                    </div>
-                    <span className="text-gray-700 text-sm font-medium">
-                      {item.text}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
 
+          
   
             
           </div>

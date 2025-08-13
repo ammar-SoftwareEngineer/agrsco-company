@@ -45,15 +45,15 @@ background-color: var(--main-color);
 
 .loader-container {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
 }
 
 .pulse-circle {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 5px solid var(--third-color);
+  border: 5px solid var(--main-color);
   animation: pulse 1.5s infinite ease-in-out;
   position: absolute;
   top: 0;
