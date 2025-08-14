@@ -13,7 +13,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-50 to-white" id="about">
+    <section className="py-20 bg-white" id="about">
       <div className="container mx-auto px-4">
         
         {/* العنوان الرئيسي */}
